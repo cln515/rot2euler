@@ -139,7 +139,7 @@ def euler2rot(euler,axis):
 if __name__ == '__main__':
 
     r1 = 0.5
-    r2 = 0
+    r2 = 0.2
     r3 = 0.9
 
     order = ['x','y','z']
@@ -244,6 +244,56 @@ if __name__ == '__main__':
 
     eu = [r1,r2,-r3]
     order = ['y','x','z']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+
+    #tests
+    eu = [-r1,r2,r3]
+    order = ['x','-y','z']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+    eu = [r1,-r2,r3]
+    order = ['z','-y','-x']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+    eu = [r1,-r2,-r3]
+    order = ['-y','-z','-x']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+    eu = [-r1,r2,-r3]
+    order = ['-z','x','y']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+    eu = [-r1,-r2,-r3]
+    order = ['x','-z','y']
+    print(order)
+    print(eu)
+    r = euler2rot(eu,order)
+    eu = rot2eular(r,order)
+    print(eu)
+
+    eu = [r1,r2,-r3]
+    order = ['y','-x','-z']
     print(order)
     print(eu)
     r = euler2rot(eu,order)
